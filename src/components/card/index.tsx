@@ -3,8 +3,9 @@ import './index.scss'
 export function Card() {
     
     return (
-        <div>
-            <h1 className="card">Card</h1>
+        <div className="card">
+            <h1 >Card</h1>
+            <p>testando</p>
         </div>
     )
 }

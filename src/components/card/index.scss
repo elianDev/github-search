@@ -1,8 +1,18 @@
 @import '../../styles/variables/index.scss';
 
 
+
+@mixin color {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .card {
     font-size: $size-text;
     color: $secondary-color;
     margin: 0;
+    h1 {
+        @include color;
+    }
 }
