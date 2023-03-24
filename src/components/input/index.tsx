@@ -3,6 +3,7 @@ export function Input() {
     <div>
       <h1>Input</h1>
       <button>Botão</button>
+      <p>teste</p>
     </div>
   );
 }
