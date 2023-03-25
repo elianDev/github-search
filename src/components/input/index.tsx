@@ -1,17 +1,23 @@
 import { useContext, useState } from "react";
-import MyContext from "../../context/MyContext";
+import { MyContext } from "../../context/MyContext";
 
 export function Input() {
+  const { handleSubmit } = useContext(MyContext);
+  // import a função handleSubmit do contexto
+  const [value, setValue] = useState("");
 
-  interface Prop {
-    name: string
-  }
-  const { name, setName }: any = useContext(MyContext)
   return (
-    <div>
+    <form onSubmit={() => handleSubmit(value)}>
+      {/* Ao submit, executa a função handleSubmit enviando o argumento value */}
       <h1>Input</h1>
-      <button onClick={() => setName('Pedro')}>Botão</button>
-      {name}
-    </div>
+      <label htmlFor="name">Digite o nome de usuário: </label>
+      <input
+        id="name"
+        type="text"
+        value={value}
+        onChange={() => setValue(value)}
+      />
+      <button>Botão</button>
+    </form>
   );
 }
