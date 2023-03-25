@@ -1,17 +1,20 @@
 import { useContext, useState } from "react";
-import MyContext from "../../context/MyContext";
+// import { MyStorage } from "../../context/MyContext";
 
 export function Input() {
+  const [value, setValue] = useState("");
 
-  interface Prop {
-    name: string
-  }
-  const { name, setName }: any = useContext(MyContext)
   return (
     <div>
       <h1>Input</h1>
-      <button onClick={() => setName('Pedro')}>Botão</button>
-      {name}
+      <label htmlFor="name">Digite o nome de usuário: </label>
+      <input
+        id="name"
+        type="text"
+        value={value}
+        onChange={() => setValue(value)}
+      />
+      <button>Botão</button>
     </div>
   );
 }
