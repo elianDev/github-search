@@ -6,8 +6,13 @@ export function Input() {
   // import a função handleSubmit do contexto
   const [value, setValue] = useState("");
 
+  const handleClick = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    handleSubmit(value)
+  }
+
   return (
-    <form onSubmit={() => handleSubmit(value)}>
+    <form onSubmit={handleClick}>
       {/* Ao submit, executa a função handleSubmit enviando o argumento value */}
       <h1>Input</h1>
       <label htmlFor="name">Digite o nome de usuário: </label>

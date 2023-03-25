@@ -6,10 +6,6 @@ import { MyProvider } from "./context/MyContext";
 import "./styles/variables/index.scss";
 
 function App() {
-  interface Prop {
-    name: string;
-  }
-
   return (
     <div className="container">
       <MyProvider>
