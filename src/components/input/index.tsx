@@ -1,11 +1,14 @@
 import { useContext, useState } from "react";
-// import { MyStorage } from "../../context/MyContext";
+import { MyContext } from "../../context/MyContext";
 
 export function Input() {
+  const { handleSubmit } = useContext(MyContext);
+  // import a função handleSubmit do contexto
   const [value, setValue] = useState("");
 
   return (
-    <div>
+    <form onSubmit={() => handleSubmit(value)}>
+      {/* Ao submit, executa a função handleSubmit enviando o argumento value */}
       <h1>Input</h1>
       <label htmlFor="name">Digite o nome de usuário: </label>
       <input
@@ -15,6 +18,6 @@ export function Input() {
         onChange={() => setValue(value)}
       />
       <button>Botão</button>
-    </div>
+    </form>
   );
 }

@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./App.scss";
 import { Card } from "./components/card";
 import { Input } from "./components/input";
-// import { MyStorage } from "./context/MyContext";
+import { MyProvider } from "./context/MyContext";
 import "./styles/variables/index.scss";
 
 function App() {
@@ -12,10 +12,10 @@ function App() {
 
   return (
     <div className="container">
-      {/* <MyStorage> */}
-      <Input />
-      <Card />
-      {/* </MyStorage> */}
+      <MyProvider>
+        <Input />
+        <Card />
+      </MyProvider>
     </div>
   );
 }
