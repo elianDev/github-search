@@ -1,7 +1,47 @@
-@import '../../styles//variables/index.scss';
+@import '../../styles/variables/index.scss';
+// @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 
+@mixin font($weight) {
+    font-family: $font-bold;
+    font-weight: $weight;
+}
 
-.text {
-    color: $secondary-color;
-    font-size: $size-text;
+.input-container {
+    h1 {
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        color: $secondary-color;
+        @include font(700);
+        font-size: $size-text
+    }
+     p:nth-child(2) {
+        margin: 0 0 5rem 0;
+        padding: 0;
+        text-align: center;
+        text-transform: capitalize;
+        @include font(600)
+    }
+    & p:nth-child(3) {
+        margin: 0 0 5px 0;
+        padding: 0;
+        text-align: center;
+        @include font(300);
+        font-size: 25px;
+        letter-spacing: 3px;
+    }
+    input {
+        padding: 0.8rem;
+        width: 600px;
+        border-radius: 25px;
+        border: none;
+        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.521);
+        font-size: 1.2rem;
+        background: $white-color;
+        color: $black-color;
+        &:focus {
+            outline: none;
+            box-shadow: 2px 1px 2px  rgba(0, 0, 0, 0.521) inset;
+        }
+    }
 }

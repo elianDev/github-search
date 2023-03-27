@@ -5,4 +5,10 @@ $black-color: #000;
 $white-color: #fff;
 
 // text
-$size-text: 3.5rem;
+$size-text: 4.5rem;
+
+// font
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+$font-bold: Roboto;
