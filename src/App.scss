@@ -1,13 +1,15 @@
-@import './styles//variables/index.scss';
+@import './styles/variables/index.scss';
 
 @mixin d-flex() {
     display: flex;
     align-items: center;
     justify-content: space-around;
+    flex-direction: column
 }
 
 .container {
     @include d-flex;
     background: $primary-color;
-    height: 100vh;
+    padding: 10rem 0;
+    min-height: 100% !important;
 }

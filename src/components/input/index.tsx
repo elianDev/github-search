@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { MyContext } from "../../context/MyContext";
-import { Button } from "../button";
+import './index.scss'
 
 export function Input(): JSX.Element {
 
@@ -33,19 +33,21 @@ export function Input(): JSX.Element {
   }
 
   return (
-    <div>
+    <div className="input-container">
       <form onSubmit={handleClick}>
         {/* Ao submit, executa a função handleSubmit enviando o argumento value */}
-        <label htmlFor="name">Digite o nome de usuário: </label>
+        <h1>SEARCH </h1>
+        <p>pesquisa</p>
+        <p id="text-search">Vamos achar um imóvel pra você</p>
         <input
           id="name"
           type="text"
           value={value}
-          onChange={(item) => setValue(item.target.value.toLowerCase().split(' ').join(''))}
+          onChange={(item) => setValue(item.target.value)}
         />
-        <Button method={handleClick}/>
+        {/* <button>Botao</button> */}
+
       </form>
-      <div>{data && <p>Nome do usuário: {data.name}</p>}</div>
     </div>
   );
 }
