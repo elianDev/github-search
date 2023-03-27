@@ -22,9 +22,13 @@ export function Input(): JSX.Element {
     setData(response)
   }, [response])
 
-  const handleClick = async (e: React.FormEvent<HTMLFormElement>): Promise<any> => {
-    e.preventDefault()
+  const handleClick = async (e?: React.FormEvent<HTMLFormElement>): Promise<any> => {
+    e?.preventDefault()
     handleSubmit(value)
+    clearState()
+  }
+
+  const clearState = () => {
     setValue("")
   }
 
