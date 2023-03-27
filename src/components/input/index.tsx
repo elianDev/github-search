@@ -39,7 +39,7 @@ export function Input(): JSX.Element {
           value={value}
           onChange={(item) => setValue(item.target.value.toLowerCase().split(' ').join(''))}
         />
-        <button>Botão</button>
+        <button>Botao</button>
 
       </form>
       <div>{data && <p>Nome do usuário: {data.name}</p>}</div>
