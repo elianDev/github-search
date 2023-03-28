@@ -25,7 +25,7 @@ export function Input(): JSX.Element {
 
   const handleClick = async (e?: React.FormEvent<HTMLFormElement>): Promise<any> => {
     e?.preventDefault()
-    const teste = await getSearch('black car')
+    const teste = await getSearch('Hotel para alugar na beira mar de fortaleza')
     console.log('teste', teste)
     handleSubmit(value)
     clearState()

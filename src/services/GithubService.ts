@@ -2,7 +2,8 @@ import axios from "axios";
 import https from "https";
 import HTTPS from "./Service";
 
-const API_KEY = 'e50a3466d2cc793b8ef2309f089ceee2'
+const API_KEY = 'B5A8E5BC5A7942B19E0AF9A8D1BF4B8B'
+
 
 // const httpAgent = new https.Agent({
 //      rejectUnauthorized: false,
@@ -15,6 +16,10 @@ export async function getUser (userName: string): Promise<any> {
 }
 
 export function getSearch(query: string): Promise<any> {
-     let url = `http://api.serpstack.com/search?access_key=${API_KEY}&type=web&query=${query}&gl=br`
-     return axios.get(url);
+     const params = {
+          api_key: API_KEY,
+          q: query
+     }
+     let url = `https://api.serpwow.com/search`
+     return axios.get(url, {params});
 }
