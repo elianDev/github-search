@@ -1,0 +1,20 @@
+@import "../../styles/variables/index.scss";
+
+.tip-container {
+  margin: 2rem auto 0;
+  padding: 0 1rem;
+  max-width: 60rem;
+
+  .tip-title {
+    text-align: center;
+    font-weight: 400;
+  }
+
+  .tip {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem 2rem;
+    font-style: italic;
+    color: $gray-color;
+  }
+}
