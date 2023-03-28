@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { MyContext } from "../../context/MyContext";
+import { getSearch } from "../../services/GithubService";
 import './index.scss'
 
 export function Input(): JSX.Element {
@@ -24,6 +25,7 @@ export function Input(): JSX.Element {
 
   const handleClick = async (e?: React.FormEvent<HTMLFormElement>): Promise<any> => {
     e?.preventDefault()
+    getSearch('programming').then((res) => console.log('res', res)).catch(err => console.log('err', err))
     handleSubmit(value)
     clearState()
   }
@@ -45,7 +47,7 @@ export function Input(): JSX.Element {
           value={value}
           onChange={(item) => setValue(item.target.value)}
         />
-        {/* <button>Botao</button> */}
+        <button>Botao</button>
 
       </form>
     </div>
