@@ -25,7 +25,8 @@ export function Input(): JSX.Element {
 
   const handleClick = async (e?: React.FormEvent<HTMLFormElement>): Promise<any> => {
     e?.preventDefault()
-    getSearch('programming').then((res) => console.log('res', res)).catch(err => console.log('err', err))
+    const teste = await getSearch('black car')
+    console.log('teste', teste)
     handleSubmit(value)
     clearState()
   }
