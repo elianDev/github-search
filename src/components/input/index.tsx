@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { MyContext } from "../../context/MyContext";
 import { getSearch } from "../../services/GithubService";
+import { Button } from "../button";
 import './index.scss'
 
 export function Input(): JSX.Element {
@@ -25,7 +26,7 @@ export function Input(): JSX.Element {
 
   const handleClick = async (e?: React.FormEvent<HTMLFormElement>): Promise<any> => {
     e?.preventDefault()
-    const teste = await getSearch('Hotel para alugar na beira mar de fortaleza')
+    const teste = await getSearch(value)
     console.log('teste', teste)
     handleSubmit(value)
     clearState()
@@ -42,13 +43,15 @@ export function Input(): JSX.Element {
         <h1>SEARCH </h1>
         <p>pesquisa</p>
         <p id="text-search">Vamos achar um imóvel pra você</p>
-        <input
-          id="name"
-          type="text"
-          value={value}
-          onChange={(item) => setValue(item.target.value)}
-        />
-        <button>Botao</button>
+        <div className="input-group">
+          <input
+            id="name"
+            type="text"
+            value={value}
+            onChange={(item) => setValue(item.target.value)}
+          />
+          <Button method={handleClick}/>
+        </div>
 
       </form>
     </div>

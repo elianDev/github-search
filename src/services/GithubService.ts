@@ -18,7 +18,8 @@ export async function getUser (userName: string): Promise<any> {
 export function getSearch(query: string): Promise<any> {
      const params = {
           api_key: API_KEY,
-          q: query
+          q: query,
+          location:'Brasil'
      }
      let url = `https://api.serpwow.com/search`
      return axios.get(url, {params});

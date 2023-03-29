@@ -1,3 +1,5 @@
+import './index.scss'
+
 interface IProp {
     method: () => Promise<any>;
   }
@@ -10,7 +12,7 @@ interface IProp {
   
     return (
       <div>
-        <button onClick={handleClick}>Botao</button>
+        <button className="send-button" onClick={handleClick}> <span>&rarr;</span> </button>
       </div>
     );
   }
