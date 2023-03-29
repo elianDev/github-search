@@ -45,8 +45,29 @@
         }
     }
 }
+.mt-xl {
+    margin-top: 12rem ;
+}
+.mt-sm {
+    margin-top: 3rem ;
+}
+
+.teste {
+    animation: marginTop 1s ease-in;
+}
+
+@keyframes marginTop {
+    0% {
+        margin-top: 12rem;
+    }
+    100% {
+        margin-top: 3rem;
+    }
+}
 
 .input-group {
     display: flex;
     position: relative;
+    max-width: max-content;
+    margin: auto;
 }

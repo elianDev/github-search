@@ -1,17 +1,15 @@
 import { createContext, ReactNode, useEffect, useState } from "react";
-import { getUser } from "../services/GithubService";
+import { getSearch } from "../services/SearchService";
 
 interface MyContextInterface {
-  handleSubmit: (username: string) => Promise<User>
-  response: User | undefined
+  handleSubmit: (username: string) => Promise<Search>
+  response: any | undefined
 }
-interface User {
-  name: string
-  followers: number
-  following: number
-  visit_url: string
-  repos: number
-  description?: string
+interface Search {
+data: any
+local_results: Array<string | number>
+organic_results: Array<string | number>
+inline_images: Array<string | number>
 }
 
 export const MyContext = createContext<MyContextInterface>(
@@ -23,29 +21,20 @@ interface MyProviderType {
 }
 
 export const MyProvider = ({ children }: MyProviderType): JSX.Element => {
-  const [response, setResponse] = useState<User>({
-    name:'',
-    followers: 0,
-    following: 0,
-    visit_url: '',
-    repos: 0,
-    description: ''
-  });
+  const [response, setResponse] = useState();
   const [error, setError] = useState<string | boolean>(false);
   const [loading, setLoading] = useState(false);
 
-   async function handleSubmit(username: string): Promise<any> {
+   async function handleSubmit(seach: string): Promise<any>{
      try {
-      getUser(username).then((res) => {
-          setResponse({
-          name: res.data.name,
-          followers: res.data.followers,
-          following: res.data.following,
-          visit_url: res.data.html_url,
-          repos: res.data.public_repos,
-          description: res.data.bio
-        })
-      })
+      const res = await getSearch<Search>(seach)
+      console.log('res', res)
+        setResponse((prevState: any) => ({
+          ...prevState,
+          local_results: res.data.local_results,
+          organic_results: res.data.organic_results,
+          inline_images: res.data.inline_images
+        }));
     } catch (erro) {
       setError("Um erro ocorreu: " + erro);
     } finally {
