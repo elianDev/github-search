@@ -3,12 +3,13 @@ $primary-color: #192a56;
 $secondary-color: #e1b12c;
 $black-color: #000;
 $white-color: #fff;
+$gray-color: #a9a9bc;
 
 // text
 $size-text: 4.5rem;
 
 // font
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
 
 $font-bold: Roboto;
